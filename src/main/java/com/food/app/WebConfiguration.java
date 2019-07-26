@@ -5,6 +5,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/**
+ * Configuration class to allow the api calls from angular food app. 
+ * Needed while designing spring boot app to communicate with angular app.
+ * It is  to support CROS origin http requests
+ *
+ */
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer{		
 
@@ -14,7 +20,6 @@ public class WebConfiguration implements WebMvcConfigurer{
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				WebMvcConfigurer.super.addCorsMappings(registry);
-				//registry.addMapping("/**");
 				registry.addMapping("/food-api/**")
 				.allowedOrigins("http://localhost:4200")
 				.allowedMethods("DELETE", "POST", "PUT", "GET")

@@ -9,6 +9,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.food.app.model.User;
 
+/**
+ * Added part of Spring Security. This class holds the logging in user's credential from database
+ *
+ */
 public class UserPrincipal implements UserDetails {
 
 	private static final long serialVersionUID = 1L;

@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 import com.food.app.model.User;
 import com.food.app.repository.UserRepository;
 
+/**
+ * Added part of Spring Security.Fetches user from database and returns as UserPrincipal,\
+ * which will be handled by spring framework
+ *
+ */
 @Service
 public class SpringUserDetailsServiceImpl implements UserDetailsService {
 ;
