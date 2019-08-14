@@ -27,7 +27,7 @@ public class UserPrincipal implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		//"User" - Authority is given to the class User
-		return Collections.singleton(new SimpleGrantedAuthority("User"));
+		return Collections.singleton(new SimpleGrantedAuthority("USER"));
 	}
 
 	@Override
@@ -58,6 +58,10 @@ public class UserPrincipal implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+	
+	public User getUser() {
+		return user;
 	}
 
 }

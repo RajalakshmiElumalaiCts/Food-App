@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  *
  */
 @Configuration
+//@EnableWebMvc
 public class WebConfiguration implements WebMvcConfigurer{		
 
 	@Bean
@@ -28,5 +29,19 @@ public class WebConfiguration implements WebMvcConfigurer{
 		};
         
     }
+	
+	 /**
+	   * Unregister the default {@link StringHttpMessageConverter} as we want Strings
+	   * to be handled by the JSON converter.
+	   *
+	   * @param converters List of already configured converters
+	   * @see WebMvcConfigurationSupport#addDefaultHttpMessageConverters(List)
+	   */
+	/*
+	 * @Override protected void
+	 * extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+	 * converters.stream() .filter(c -> c instanceof StringHttpMessageConverter)
+	 * .findFirst().ifPresent(converters::remove); }
+	 */
 
 }
